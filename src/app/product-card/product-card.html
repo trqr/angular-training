@@ -1,0 +1,11 @@
+<article class="product-card">
+  <img
+    [src]="product().thumbnail"
+    [alt]="product().title"
+  />
+  <h3>{{product().title}}</h3>
+  <p>{{product().price}} €</p>
+  <div class="addtocard-action">
+    <app-button variant="contained" [disabled]="false" (click)="onAddClick()">Ajouter au panier</app-button>
+  </div>
+</article>

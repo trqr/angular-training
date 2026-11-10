@@ -1,0 +1,11 @@
+<button
+  class="button"
+  [type]="type()"
+  [disabled]="disabled()"
+  [class.contained]="variant() === 'contained'"
+  [class.outlined]="variant() === 'outlined'"
+  [class.primary]="color() === 'primary'"
+  [class.secondary]="color() === 'secondary'"
+>
+  <ng-content></ng-content>
+</button>

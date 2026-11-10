@@ -1,0 +1,14 @@
+import { Component, input } from '@angular/core';
+
+@Component({
+  imports: [],
+  selector: 'app-button',
+  styleUrl: './button.css',
+  templateUrl: './button.html',
+})
+export class Button {
+  variant = input<'contained' | 'outlined'>('contained');
+  color = input<'primary' | 'secondary'>('primary');
+  type = input<'button' | 'submit' | 'reset'>('button');
+  disabled = input<boolean>(false);
+}

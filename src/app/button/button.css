@@ -1,0 +1,40 @@
+.button {
+  padding: 4px 12px;
+  margin: 4px;
+  border-radius: 4px;
+  border: 2px solid var(--btn-color);
+  background-color: var(--btn-color);
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  transition: opacity 0.2s, background-color 0.2s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  --btn-color: var(--color-primary);
+  --btn-contrast: whitesmoke;
+}
+
+.secondary {
+  --btn-color: teal;
+  --btn-contrast: white;
+}
+
+.contained {
+  background-color: var(--btn-color);
+  color: var(--btn-contrast);
+}
+
+.outlined {
+  background-color: transparent;
+  color: var(--btn-color);
+}

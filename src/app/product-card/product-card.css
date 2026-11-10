@@ -1,0 +1,21 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 240px;
+  margin: 8px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: var(--color-card-background);
+  vertical-align: top;
+  min-height: 430px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.addtocard-action {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: blueviolet;
+  --color-primary-contrast: whitesmoke;
+
+  --color-secondary: teal;
+  --color-secondary-contrast: white;
+
+  --color-background-dark: #1b1a1a;
+  --color-background-light: #efe8e8;
+
+  --color-card-background: #373535;
+
+  --color-text-light: #efe8e8;
+
+}
+
+body {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  font-family: "Roboto Light", serif;
+}
+
