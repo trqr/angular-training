@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product, catalog } from '../products';
 
@@ -11,7 +11,9 @@ import { Product, catalog } from '../products';
 export class ProductList {
   private products = catalog
 
+  cart = signal<Product[]>([]);
+
   protected onAdd(product: Product) {
-    console.log(product);
+    this.cart.update(cart => [...cart, product]);
   }
 }

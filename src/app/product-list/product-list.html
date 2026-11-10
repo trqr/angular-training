@@ -1,5 +1,8 @@
 <section >
-  <h2>Nos produits</h2>
+  <div class="list-title">
+    <h2>Nos produits</h2>
+    <h2>Nombre d'article dans votre panier: {{cart().length}}</h2>
+  </div>
   <div class="product-list">
     @for (product of products; track $index){
       <app-product-card [product]="product" (addToCard)="onAdd($event)"/>
