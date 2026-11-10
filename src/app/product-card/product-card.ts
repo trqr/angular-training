@@ -10,9 +10,14 @@ import { Product } from '../products';
 })
 export class ProductCard {
   product = input.required<Product>();
-  addToCard = output<Product>();
+  addToCart = output<Product>();
+  clearCart = output<Product>();
 
   onAddClick() {
-    this.addToCard.emit(this.product());
+    this.addToCart.emit(this.product());
+  }
+
+  onClearClick(): void {
+    this.clearCart.emit(this.product());
   }
 }

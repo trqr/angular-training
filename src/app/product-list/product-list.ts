@@ -13,7 +13,15 @@ export class ProductList {
 
   cart = signal<Product[]>([]);
 
-  protected onAdd(product: Product) {
+  onAdd(product: Product) {
     this.cart.update(cart => [...cart, product]);
+  }
+
+  onRemove(product: Product) {
+    this.cart.update(cart => cart.filter(item => product !== item))
+  }
+
+  onClear(): void {
+    this.cart.set([]);
   }
 }
