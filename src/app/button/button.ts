@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
   templateUrl: './button.html',
 })
 export class Button {
-  variant = input<'contained' | 'outlined'>('contained');
+  variant = input<'contained' | 'outlined' | 'ghost'>('contained');
   color = input<'primary' | 'secondary'>('primary');
   type = input<'button' | 'submit' | 'reset'>('button');
   disabled = input<boolean>(false);

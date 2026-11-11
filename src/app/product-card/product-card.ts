@@ -11,13 +11,19 @@ import { Product } from '../products';
 export class ProductCard {
   product = input.required<Product>();
   addToCart = output<Product>();
-  clearCart = output<Product>();
+  removeFromCart = output<Product>();
+  clearCart = output<void>();
+  quantity = input<number>(0);
 
   onAddClick() {
     this.addToCart.emit(this.product());
   }
 
+  onRemoveClick() {
+    this.removeFromCart.emit(this.product());
+  }
+
   onClearClick(): void {
-    this.clearCart.emit(this.product());
+    this.clearCart.emit();
   }
 }

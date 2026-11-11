@@ -1,0 +1,2 @@
+<app-header [cart]="cart()" (clearCart)="onClear()"/>
+<app-product-list [cart]="cart()" (added)="onAdd($event)"  (removed)="onRemove($event)"/>

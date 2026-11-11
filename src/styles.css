@@ -18,6 +18,7 @@
 body {
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
-  font-family: "Roboto Light", serif;
+  font-family: "Cambria", serif;
+  margin: 20px;
 }
 

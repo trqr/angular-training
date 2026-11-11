@@ -1,4 +1,10 @@
 <header class="header">
-  <h1>Training Shop</h1>
-  <p>Le catalogue d'entraînement</p>
+  <div class="logo">
+    <h1>Training Shop</h1>
+    <p>Le catalogue d'entraînement</p>
+  </div>
+  <div class="cart">
+     <h2>IconPanier Badge: {{count()}} test: {{count2}}</h2>
+    <app-button color="primary" variant="ghost" [disabled]="!count()" (click)="clearCart.emit()">Vider le panier</app-button>
+  </div>
 </header>

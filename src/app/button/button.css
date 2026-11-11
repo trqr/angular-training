@@ -8,6 +8,7 @@
   font: inherit;
   color: white;
   transition: opacity 0.2s, background-color 0.2s;
+  text-transform: uppercase;
 
   &:hover:not(:disabled) {
     opacity: 0.85;
@@ -36,5 +37,11 @@
 
 .outlined {
   background-color: transparent;
+  color: var(--btn-color);
+}
+
+.ghost {
+  background-color: transparent;
+  border: none;
   color: var(--btn-color);
 }

@@ -6,7 +6,11 @@
   <h3>{{product().title}}</h3>
   <p>{{product().price}} €</p>
   <div class="addtocard-action">
-    <app-button variant="contained" [disabled]="false" (click)="onClearClick()">Enlever</app-button>
+    <app-button variant="contained" [disabled]="false" (click)="onRemoveClick()">Enlever</app-button>
     <app-button variant="contained" [disabled]="false" (click)="onAddClick()">Ajouter</app-button>
   </div>
+  @if (quantity() > 0)
+  {
+    <div>Vous avez ajouté {{quantity()}} {{product().title}} au panier!</div>
+  }
 </article>

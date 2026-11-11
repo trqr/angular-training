@@ -1,11 +1,15 @@
 <section >
   <div class="list-title">
     <h2>Nos produits</h2>
-    <h2>Nombre d'article dans votre panier: {{cart().length}}</h2>
   </div>
   <div class="product-list">
     @for (product of products; track $index){
-      <app-product-card [product]="product" (addToCart)="onAdd($event)"/>
+      <app-product-card
+        [product]="product"
+        (addToCart)="added.emit($event)"
+        (removeFromCart)="removed.emit($event)"
+        [quantity]="getProductQuantity(product)"
+      />
     }
   </div>
 </section>
