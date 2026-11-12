@@ -1,1 +1,48 @@
-<p>product-form works!</p>
+<form class="product-form" [formRoot]="productForm">
+  <div class="form-group">
+    <label for="title">Nom du produit</label>
+    <input id="title" [formField]="productForm.title" />
+    @if (productForm.title().touched() && productForm.title().errors(); as errors) {
+      @for (error of errors; track $index) {
+      <p class="error">{{ error.message }}</p>
+      }
+    }
+  </div>
+  <div class="form-group">
+    <label for="price">Prix</label>
+    <input type="number" id="price" [formField]="productForm.price" />
+    @if (productForm.price().touched() && productForm.price().errors(); as errors) {
+      @for (error of errors; track $index) {
+        <p class="error">{{ error.message }}</p>
+      }
+    }
+  </div>
+  <div class="form-group">
+    <label for="stock">Quantité en stock</label>
+    <input type="number" id="stock" [formField]="productForm.stock" />
+    @if (productForm.stock().touched() && productForm.stock().errors(); as errors) {
+      @for (error of errors; track $index) {
+        <p class="error">{{ error.message }}</p>
+      }
+    }
+  </div>
+  <div class="form-group">
+    <label for="thumbnail">url de l'image</label>
+    <input id="thumbnail" [formField]="productForm.thumbnail" />
+    @if (productForm.thumbnail().touched() && productForm.thumbnail().errors(); as errors) {
+      @for (error of errors; track $index) {
+        <p class="error">{{ error.message }}</p>
+      }
+    }
+  </div>
+
+  <app-button type="submit" [disabled]="productForm().submitting()" >Ajouter</app-button>
+</form>
+
+<pre>{{ product() | json }}</pre>
+
+
+@if (sent(); as product) {
+  <p>✅ Prêt à envoyer au serveur :</p>
+  <pre>{{ product | json }}</pre>
+}

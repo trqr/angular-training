@@ -3,7 +3,7 @@
     <h2>Nos produits</h2>
   </div>
   <div class="product-list">
-    @for (product of products; track $index){
+    @for (product of products(); track $index){
       <app-product-card [product]="product" />
     }
   </div>

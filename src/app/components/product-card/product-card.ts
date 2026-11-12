@@ -1,8 +1,8 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { Button } from '../button/button';
-import { Product } from '../../products';
 import { RouterLink } from '@angular/router';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart/cart.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   imports: [Button, RouterLink],

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Button } from '../button/button';
 import { RouterLink } from '@angular/router';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   imports: [Button, RouterLink],
