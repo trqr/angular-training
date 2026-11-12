@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="logo">
+    <h1>Training Shop</h1>
+    <p>Le catalogue d'entraînement</p>
+  </div>
+  <div class="header-menu">
+    <a routerLink="products/new">Ajouter un produit</a>
+  </div>
+  <div class="header-right-box">
+    <div class="cart">
+       <div>&#xf07a; nb: {{cartService.count()}} total: {{cartService.total()}}€</div>
+      <app-button color="primary" variant="ghost" [disabled]="!cartService.count()" (click)="cartService. clear()">Vider</app-button>
+    </div>
+    <a routerLink="/account">Mon compte</a>
+  </div>
+</header>

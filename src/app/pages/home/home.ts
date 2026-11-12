@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { ProductList } from '../../product-list/product-list';
+import { ProductList } from '../../components/product-list/product-list';
 import { Product } from '../../products';
-import { Header } from '../../header/header';
+import { Header } from '../../components/header/header';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

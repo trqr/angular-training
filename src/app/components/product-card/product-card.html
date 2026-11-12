@@ -1,10 +1,12 @@
-<article class="product-card">
-  <img
+<article class="product-card" >
+  <a [routerLink]="['/products', product().id]">
+    <img
     [src]="product().thumbnail"
     [alt]="product().title"
-  />
-  <h3>{{product().title}}</h3>
-  <p>{{product().price}} €</p>
+    />
+    <h3>{{product().title}}</h3>
+    <p>{{product().price}} €</p>
+  </a>
   <div class="addtocard-action">
     <app-button variant="contained" [disabled]="false" (click)="onRemoveClick()">Enlever</app-button>
     <app-button variant="contained" [disabled]="false" (click)="onAddClick()">Ajouter</app-button>
