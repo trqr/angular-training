@@ -1,0 +1,19 @@
+<section class="cart-page">
+  <h2>Panier</h2>
+
+  @if (cart.lines().length === 0) {
+    <p>Votre panier est vide.</p>
+  } @else {
+    <ul class="cart-lines">
+      @for (line of cart.lines(); track line.product.id) {
+        <li class="cart-line">
+          <span>{{ line.product.title }}</span>
+          <span>Quantité : {{ line.quantity }}</span>
+          <span>Sous-total : {{ (line.quantity * line.product.price).toFixed(2) }} €</span>
+          <app-button variant="outlined" (click)="cart.removeOne(line.product.id)">Retirer</app-button>
+        </li>
+      }
+    </ul>
+    <p class="cart-total">Total : {{ cart.total() }} €</p>
+  }
+</section>

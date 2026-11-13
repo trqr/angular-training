@@ -8,8 +8,8 @@
     <a class="menu-item" routerLink="products/new">Ajouter un produit</a>
   </div>
   <div class="header-right-box">
-    <div class="cart">
-       <div>&#xf07a; nb: {{cartService.count()}} total: {{cartService.total()}}€</div>
+    <div class="cart" >
+       <div routerLink="/cart">&#xf07a; nb: {{cartService.count()}} total: {{cartService.total()}}€</div>
       <app-button color="primary" variant="ghost" [disabled]="!cartService.count()" (click)="cartService. clear()">Vider</app-button>
     </div>
     <a routerLink="/account">Mon compte</a>

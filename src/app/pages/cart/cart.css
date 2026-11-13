@@ -1,0 +1,21 @@
+.cart-page {
+  max-width: 100%;
+}
+
+.cart-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.cart-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  max-width: 100%;
+}
