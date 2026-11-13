@@ -6,18 +6,20 @@ import { Product, ProductCreationRequest, ProductsResponse } from '../../models/
 @Service()
 export class ProductApiService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = 'https://dummyjson.com/products';
+  private readonly prefix = '/products';
 
   async getAll(): Promise<Product[]> {
-    const res = await firstValueFrom(this.http.get<ProductsResponse>(`${this.baseUrl}?limit=12`));
+    const res = await firstValueFrom(this.http.get<ProductsResponse>(`${this.prefix}?limit=12`));
     return res.products;
   }
 
   async getById(id: number): Promise<Product> {
-    return await firstValueFrom(this.http.get<Product>(`${this.baseUrl}/${id}`));
+    return await firstValueFrom(this.http.get<Product>(`${this.prefix}/${id}`));
   }
 
   async add(product: ProductCreationRequest): Promise<Product> {
-    return await firstValueFrom(this.http.post<Product>(`${this.baseUrl}/add`, product));
+    return await firstValueFrom(this.http.post<Product>(`${this.prefix}/add`, product));
   }
 }
+
+//

@@ -1,3 +1,15 @@
 .container {
   margin-inline: 20%;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    margin-inline: 8%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-inline: 16px;
+  }
+}

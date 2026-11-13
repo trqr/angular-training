@@ -1,0 +1,133 @@
+@let u = user();
+
+<article class="profile">
+  <!-- En-tête -->
+  <header class="hero">
+    <img class="avatar" [src]="u.image" [alt]="u.firstName + ' ' + u.lastName" />
+    <div class="identity">
+      <h1>
+        {{ u.firstName }} {{ u.lastName }}
+        @if (u.maidenName) {
+          <small>née {{ u.maidenName }}</small>
+        }
+      </h1>
+      <p class="username">&#64;{{ u.username }}</p>
+      <div class="badges">
+        <span class="badge" [class]="'badge role-' + u.role">{{ u.role | titlecase }}</span>
+        <span class="badge neutral">{{ u.age }} ans</span>
+        <span class="badge neutral">{{ u.gender | titlecase }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- Contact -->
+    <section class="card">
+      <h2>📇 Contact</h2>
+      <dl>
+        <dt>Email</dt>
+        <dd><a [href]="'mailto:' + u.email">{{ u.email }}</a></dd>
+        <dt>Téléphone</dt>
+        <dd><a [href]="'tel:' + u.phone">{{ u.phone }}</a></dd>
+        <dt>Date de naissance</dt>
+        <dd>{{ u.birthDate }}</dd>
+      </dl>
+    </section>
+
+    <!-- Adresse -->
+    <section class="card">
+      <h2>📍 Adresse</h2>
+      <dl>
+        <dt>Rue</dt>
+        <dd>{{ u.address.address }}</dd>
+        <dt>Ville</dt>
+        <dd>{{ u.address.city }}, {{ u.address.state }} ({{ u.address.stateCode }})</dd>
+        <dt>Code postal</dt>
+        <dd>{{ u.address.postalCode }}</dd>
+        <dt>Pays</dt>
+        <dd>{{ u.address.country }}</dd>
+        <dt>Coordonnées</dt>
+        <dd>{{ u.address.coordinates.lat }}, {{ u.address.coordinates.lng }}</dd>
+      </dl>
+    </section>
+
+    <!-- Physique -->
+    <section class="card">
+      <h2>🧬 Physique</h2>
+      <dl>
+        <dt>Taille</dt>
+        <dd>{{ u.height }} cm</dd>
+        <dt>Poids</dt>
+        <dd>{{ u.weight }} kg</dd>
+        <dt>Groupe sanguin</dt>
+        <dd>{{ u.bloodGroup }}</dd>
+        <dt>Yeux</dt>
+        <dd>{{ u.eyeColor }}</dd>
+        <dt>Cheveux</dt>
+        <dd>{{ u.hair.color }} · {{ u.hair.type }}</dd>
+      </dl>
+    </section>
+
+    <!-- Professionnel -->
+    <section class="card">
+      <h2>💼 Professionnel</h2>
+      <dl>
+        <dt>Entreprise</dt>
+        <dd>{{ u.company.name }}</dd>
+        <dt>Poste</dt>
+        <dd>{{ u.company.title }}</dd>
+        <dt>Département</dt>
+        <dd>{{ u.company.department }}</dd>
+        <dt>Lieu</dt>
+        <dd>{{ u.company.address.city }}, {{ u.company.address.stateCode }}</dd>
+        <dt>Université</dt>
+        <dd>{{ u.university }}</dd>
+      </dl>
+    </section>
+
+    <!-- Banque -->
+    <section class="card">
+      <h2>💳 Banque</h2>
+      <div class="bank-card">
+        <span class="card-type">{{ u.bank.cardType }}</span>
+        <span class="card-number">{{ u.bank.cardNumber }}</span>
+        <div class="card-footer">
+          <span>{{ u.firstName }} {{ u.lastName }}</span>
+          <span>{{ u.bank.cardExpire }}</span>
+        </div>
+      </div>
+      <dl>
+        <dt>IBAN</dt>
+        <dd class="mono">{{ u.bank.iban }}</dd>
+        <dt>Devise</dt>
+        <dd>{{ u.bank.currency }}</dd>
+      </dl>
+    </section>
+
+    <!-- Crypto -->
+    <section class="card">
+      <h2>🪙 Crypto</h2>
+      <dl>
+        <dt>Monnaie</dt>
+        <dd>{{ u.crypto.coin }}</dd>
+        <dt>Réseau</dt>
+        <dd>{{ u.crypto.network }}</dd>
+        <dt>Wallet</dt>
+        <dd class="mono wrap">{{ u.crypto.wallet }}</dd>
+      </dl>
+    </section>
+
+    <!-- Technique -->
+    <section class="card wide">
+      <h2>🖥️ Technique</h2>
+      <dl>
+        <dt>Adresse IP</dt>
+        <dd class="mono">{{ u.ip }}</dd>
+        <dt>Adresse MAC</dt>
+        <dd class="mono">{{ u.macAddress }}</dd>
+        <dt>User-Agent</dt>
+        <dd class="mono wrap">{{ u.userAgent }}</dd>
+      </dl>
+    </section>
+  </div>
+</article>

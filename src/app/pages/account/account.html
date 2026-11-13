@@ -1,1 +1,6 @@
-<p>account works!</p>
+@if (user()) {
+<app-user-profile [user]="user()!" />
+  }
+@else {
+  <p>Not logged in</p>
+}
