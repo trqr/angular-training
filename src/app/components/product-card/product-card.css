@@ -1,12 +1,11 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width: 240px;
+  justify-content: flex-start;
+  width: min(100%, 15rem);
   margin: 8px;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   background: var(--color-card-background);
   vertical-align: top;
@@ -18,12 +17,12 @@
 
 .addtocard-action {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+  margin-top: auto;
 }
 
 .added-popup {
-  position: absolute;
-  bottom: -42px;
-  right: 0;
+  margin: 0.5rem 0 0;
   color: var(--color-success);
 }

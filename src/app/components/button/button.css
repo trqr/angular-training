@@ -6,28 +6,28 @@
   background-color: var(--btn-color);
   cursor: pointer;
   font: inherit;
-  color: white;
-  transition: opacity 0.2s, background-color 0.2s;
+  color: var(--color-text);
+  transition: background-color 0.2s;
   text-transform: uppercase;
+}
 
-  &:hover:not(:disabled) {
-    opacity: 0.85;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .primary {
   --btn-color: var(--color-primary);
-  --btn-contrast: whitesmoke;
+  --btn-contrast: var(--color-primary-contrast);
+  --btn-ink: var(--color-accent);
+  --btn-hover: var(--color-primary-hover);
 }
 
 .secondary {
-  --btn-color: teal;
-  --btn-contrast: white;
+  --btn-color: var(--color-secondary);
+  --btn-contrast: var(--color-secondary-contrast);
+  --btn-ink: var(--color-secondary-ink);
+  --btn-hover: var(--color-secondary-hover);
 }
 
 .contained {
@@ -35,12 +35,23 @@
   color: var(--btn-contrast);
 }
 
+.contained:hover:not(:disabled) {
+  background-color: var(--btn-hover);
+}
+
 .outlined {
   background-color: transparent;
+  border-color: var(--btn-ink);
+  color: var(--color-text);
 }
 
 .ghost {
   background-color: transparent;
-  border: none;
-  color: var(--btn-color);
+  border-color: transparent;
+  color: var(--btn-ink);
+}
+
+.outlined:hover:not(:disabled),
+.ghost:hover:not(:disabled) {
+  text-decoration: underline;
 }

@@ -1,10 +1,23 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   margin-bottom: 2rem;
-  background-color: var(--color-background-dark);
-  border-bottom: 1px solid var(--color-primary);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.logo h1,
+.logo p {
+  margin: 0;
 }
 
 .header-menu {
@@ -13,19 +26,24 @@
   gap: 1rem;
 }
 
-.menu-item {
+.menu-item,
+.cart-link {
   text-decoration: none;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
 .header-right-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .cart {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }

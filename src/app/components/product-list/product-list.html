@@ -1,10 +1,18 @@
-<section >
+<section>
   <div class="list-title">
     <h2>Nos produits</h2>
   </div>
-  <div class="product-list">
-    @for (product of products(); track $index){
-      <app-product-card [product]="product" />
-    }
-  </div>
+  @if (loading()) {
+    <p role="status">Chargement du catalogue…</p>
+  } @else if (error(); as message) {
+    <p class="error" role="alert">{{ message }}</p>
+  } @else if (products().length === 0) {
+    <p role="status">Aucun produit à afficher.</p>
+  } @else {
+    <div class="product-list">
+      @for (product of products(); track product.id) {
+        <app-product-card [product]="product" />
+      }
+    </div>
+  }
 </section>

@@ -10,7 +10,13 @@
           <span>{{ line.product.title }}</span>
           <span>Quantité : {{ line.quantity }}</span>
           <span>Sous-total : {{ (line.quantity * line.product.price).toFixed(2) }} €</span>
-          <app-button variant="outlined" (click)="cart.removeOne(line.product.id)">Retirer</app-button>
+          <app-button
+            variant="outlined"
+            [ariaLabel]="'Retirer une unité de ' + line.product.title"
+            (click)="cart.removeOne(line.product.id)"
+          >
+            Retirer
+          </app-button>
         </li>
       }
     </ul>

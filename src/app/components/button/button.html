@@ -2,6 +2,7 @@
   class="button"
   [type]="type()"
   [disabled]="disabled()"
+  [attr.aria-label]="ariaLabel() || null"
   [class.contained]="variant() === 'contained'"
   [class.outlined]="variant() === 'outlined'"
   [class.ghost]="variant() === 'ghost'"

@@ -1,0 +1,108 @@
+<article class="legal">
+  <h2>Mentions légales</h2>
+  <p>
+    Cette page dit qui diffuse Training Shop, et quelles données l'application manipule vraiment.
+  </p>
+
+  <section>
+    <h3>Éditeur</h3>
+    <p>
+      Training Shop est une application d'entraînement (projet training-front). Elle n'est pas éditée
+      par une société et n'a pas d'adresse commerciale. La personne qui lance le projet sur sa machine
+      en est l'éditeur le temps de la session.
+    </p>
+  </section>
+
+  <section>
+    <h3>Hébergement</h3>
+    <p>
+      L'interface est servie en local par le serveur de développement Angular, en général sur
+      http://localhost:4200. Le catalogue, la connexion et la fiche de profil viennent de
+      <a href="https://dummyjson.com">DummyJSON (dummyjson.com)</a>. Cette application n'héberge pas
+      ces données.
+    </p>
+  </section>
+
+  <section>
+    <h3>Données collectées</h3>
+
+    <h4>Identifiants envoyés à DummyJSON</h4>
+    <p>
+      Le formulaire de connexion envoie le nom d'utilisateur et le mot de passe à
+      https://dummyjson.com/auth/login. Ce sont des comptes de démonstration fournis par DummyJSON.
+      Le mot de passe n'est pas enregistré : le formulaire est vidé après l'envoi.
+    </p>
+
+    <h4>Jeton d'accès</h4>
+    <p>
+      La réponse contient un <code>accessToken</code>. L'application le range dans le localStorage du
+      navigateur, sous la clé <code>token</code>. L'intercepteur HTTP l'ajoute ensuite dans l'en-tête
+      <code>Authorization: Bearer</code>, uniquement sur les requêtes envoyées à dummyjson.com. Le
+      <code>refreshToken</code> renvoyé par DummyJSON n'est pas conservé.
+    </p>
+    <p>
+      Le jeton reste jusqu'à la suppression de cette clé, ou jusqu'à l'effacement des données du site.
+      Une réponse 401 de l'API le retire aussi.
+    </p>
+
+    <h4>Panier</h4>
+    <p>
+      Les produits ajoutés (identifiant, titre, prix, image) restent dans la mémoire de l'onglet. Ils
+      ne sont pas écrits dans le localStorage et ne sont pas envoyés à un serveur. Recharger la page
+      vide le panier.
+    </p>
+
+    <h4>Cookie de DummyJSON</h4>
+    <p>
+      DummyJSON documente que la connexion dépose aussi les jetons <code>accessToken</code> et
+      <code>refreshToken</code> dans des cookies du domaine dummyjson.com. Cette application ne
+      demande pas au navigateur de renvoyer ces cookies : elle n'utilise que le jeton copié dans le
+      localStorage. Comme le site local et dummyjson.com sont deux domaines distincts, le navigateur
+      peut en plus refuser ces cookies.
+    </p>
+
+    <h4>Fiche de profil</h4>
+    <p>
+      Une fois la personne connectée, l'application interroge https://dummyjson.com/auth/me et affiche
+      la fiche de démonstration (identité, contact, adresse, informations bancaires et techniques).
+      Cette fiche n'est pas recopiée dans le localStorage.
+    </p>
+  </section>
+
+  <section>
+    <h3>Pourquoi ces données, et combien de temps</h3>
+    <ul>
+      <li>Identifiants : obtenir un jeton de démonstration, au moment où la personne se connecte.</li>
+      <li>Jeton : appeler l'API DummyJSON pour cette session, jusqu'à l'effacement du localStorage.</li>
+      <li>Panier : afficher les produits choisis, le temps de vie de l'onglet.</li>
+      <li>
+        Cookie DummyJSON : posé par DummyJSON. Sa documentation indique une durée d'environ une heure
+        par défaut pour le jeton d'accès. Cette application ne s'en sert pas.
+      </li>
+      <li>Pas de mesure d'audience, pas de publicité, pas de revente.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Vos droits</h3>
+    <p>
+      Le RGPD reconnaît un droit d'accès, de rectification, d'effacement, de limitation, d'opposition
+      et de portabilité.
+    </p>
+    <ul>
+      <li>
+        Effacer le jeton local : supprimer la clé <code>token</code> dans les données du site, ou
+        effacer les données de navigation pour cette origine.
+      </li>
+      <li>Effacer le panier : bouton « Vider le panier », ou recharger la page.</li>
+      <li>
+        Les fiches DummyJSON sont des données de démonstration hébergées par ce service. Cette
+        application n'a pas de base d'utilisateurs à rectifier.
+      </li>
+    </ul>
+    <p>
+      Il n'y a pas de délégué à la protection des données : le site n'est pas publié. Une réclamation
+      peut être adressée à la <a href="https://www.cnil.fr">CNIL (cnil.fr)</a>.
+    </p>
+  </section>
+</article>

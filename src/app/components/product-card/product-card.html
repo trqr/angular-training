@@ -8,11 +8,24 @@
     <p>{{product().price}} €</p>
   </a>
   <div class="addtocard-action">
-    <app-button variant="contained" [disabled]="false" (click)="onRemoveClick()">Enlever</app-button>
-    <app-button variant="contained" [disabled]="false" (click)="onAddClick()">Ajouter</app-button>
+    <app-button
+      variant="contained"
+      [ariaLabel]="'Retirer ' + product().title + ' du panier'"
+      (click)="onRemoveClick()"
+    >
+      Retirer
+    </app-button>
+    <app-button
+      variant="contained"
+      [ariaLabel]="'Ajouter ' + product().title + ' au panier'"
+      (click)="onAddClick()"
+    >
+      Ajouter au panier
+    </app-button>
   </div>
-  @if (quantity() > 0)
-  {
-    <div class="added-popup">Vous avez ajouté {{quantity()}} {{product().title}} au panier!</div>
+  @if (quantity() > 0) {
+    <p class="added-popup" role="status">
+      Vous avez ajouté {{ quantity() }} {{ product().title }} au panier.
+    </p>
   }
 </article>

@@ -1,8 +1,10 @@
 .product-details {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
+  max-width: 100%;
   padding: 0 24px;
 }
 .product-details img {
-  width: 160px;
+  width: min(160px, 100%);
 }

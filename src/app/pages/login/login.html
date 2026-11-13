@@ -1,19 +1,19 @@
 <form class="product-form" [formRoot]="userForm">
   <div class="form-group">
     <label for="username">Username</label>
-    <input id="username" [formField]="userForm.username" />
+    <input id="username" autocomplete="username" [formField]="userForm.username" />
     @if (userForm.username().touched() && userForm.username().errors(); as errors) {
       @for (error of errors; track $index) {
-        <p class="error">{{ error.message }}</p>
+        <p class="error" role="alert">{{ error.message }}</p>
       }
     }
   </div>
   <div class="form-group">
     <label for="password">Mot de passe</label>
-    <input id="password" type="password" [formField]="userForm.password" />
+    <input id="password" type="password" autocomplete="current-password" [formField]="userForm.password" />
     @if (userForm.password().touched() && userForm.password().errors(); as errors) {
       @for (error of errors; track $index) {
-        <p class="error">{{ error.message }}</p>
+        <p class="error" role="alert">{{ error.message }}</p>
       }
     }
   </div>
@@ -22,12 +22,12 @@
 </form>
 
 @if (authService.token(); as token) {
-  <p>✅ Token reçu :</p>
+  <p role="status">✅ Token reçu :</p>
   <pre>{{ token | json }}</pre>
 }
 
 @if (userForm().errors()) {
   @for (error of userForm().errors(); track $index) {
-    <p class="error">Server Error: {{ error.message }}</p>
+    <p class="error" role="alert">Server Error: {{ error.message }}</p>
   }
 }

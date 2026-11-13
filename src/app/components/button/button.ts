@@ -11,4 +11,5 @@ export class Button {
   color = input<'primary' | 'secondary'>('primary');
   type = input<'button' | 'submit' | 'reset'>('button');
   disabled = input<boolean>(false);
+  ariaLabel = input<string>('');
 }

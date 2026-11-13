@@ -1,10 +1,11 @@
 <article class="product-details">
-  @if (product(); as p) {
+  @if (loading()) {
+    <p role="status">Chargement du produit…</p>
+  } @else if (product(); as p) {
     <h2>{{ p.title }}</h2>
     <p>{{ p.price }} €</p>
-    <img [src]="p.thumbnail" [alt]="p.title">
+    <img [src]="p.thumbnail" [alt]="p.title" />
   } @else {
-    <h2>Produit introuvable</h2>
+    <h2 role="alert">Produit introuvable</h2>
   }
 </article>
-

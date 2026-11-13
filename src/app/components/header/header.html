@@ -1,17 +1,21 @@
 <header class="header">
-  <div class="logo" routerLink="">
+  <a class="logo" routerLink="/">
     <h1>Training Shop</h1>
     <p>Le catalogue d'entraînement</p>
-  </div>
-  <div class="header-menu">
-    <a class="menu-item" routerLink="">Accueil</a>
-    <a class="menu-item" routerLink="products/new">Ajouter un produit</a>
-  </div>
+  </a>
+  <nav class="header-menu" aria-label="Navigation principale">
+    <a class="menu-item" routerLink="/">Accueil</a>
+    <a class="menu-item" routerLink="/products/new">Ajouter un produit</a>
+  </nav>
   <div class="header-right-box">
-    <div class="cart" >
-       <div routerLink="/cart">&#xf07a; nb: {{cartService.count()}} total: {{cartService.total()}}€</div>
-      <app-button color="primary" variant="ghost" [disabled]="!cartService.count()" (click)="cartService. clear()">Vider</app-button>
+    <div class="cart">
+      <a class="cart-link" routerLink="/cart">
+        <span aria-live="polite" aria-atomic="true">{{ cartLabel() }}</span>
+      </a>
+      <app-button color="primary" variant="ghost" [disabled]="!cartService.count()" (click)="cartService.clear()">
+        Vider le panier
+      </app-button>
     </div>
-    <a routerLink="/account">Mon compte</a>
+    <a class="menu-item" routerLink="/account">Mon compte</a>
   </div>
 </header>

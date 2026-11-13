@@ -1,0 +1,37 @@
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  transform: translateY(-150%);
+  background-color: var(--color-text);
+  color: var(--color-background);
+  padding: 0.5rem 0.75rem;
+  z-index: 2;
+}
+
+.skip-link:focus {
+  transform: translateY(0.5rem);
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1rem 16px 0;
+  border-top: 1px solid var(--color-accent);
+  max-width: 100%;
+}
+
+.site-footer a {
+  text-decoration: underline;
+}
+
+@media (min-width: 601px) {
+  .site-footer {
+    padding-inline: 8%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .site-footer {
+    padding-inline: 20%;
+  }
+}

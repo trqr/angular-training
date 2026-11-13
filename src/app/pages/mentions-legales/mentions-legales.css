@@ -1,0 +1,28 @@
+.legal {
+  max-width: 65ch;
+}
+
+.legal section {
+  margin-top: 1.5rem;
+}
+
+.legal h2,
+.legal h3,
+.legal h4 {
+  line-height: 1.3;
+}
+
+.legal p,
+.legal li {
+  line-height: 1.5;
+}
+
+.legal a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.legal code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.95em;
+}
